@@ -9,24 +9,14 @@ import { useState } from 'react';
 import Cart from './components/Cart';
 
 function App() {
-const[cartCount,setCartCount]=useState(0)
-const[cartContent,setCartContent]=useState([])
-
-  const modifyCart=(product)=>{
-    setCartContent(prev=>[product,...prev])
-
-        setCartCount((prevcount)=>prevcount+1)
-
-
-  }
   return (
     <Router>
-<NavBar count={cartCount}/>
+<NavBar/>
 <Routes>
   <Route path='/' element={<CounterWrapper/>}/>
   <Route path='/products' element={<Products/>}/>
-  <Route path='/products/:id' element={<SingleProduct addtocart={modifyCart}/>} />
-<Route path='/cart' element={<Cart cartContent={cartContent}/>}/>
+  <Route path='/products/:id' element={<SingleProduct/>} />
+<Route path='/cart' element={<Cart/>}/>
 </Routes>
 </Router>
     );

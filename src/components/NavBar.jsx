@@ -1,9 +1,12 @@
 import React,{useEffect,useState} from 'react'
-
+import {FaShoppingCart} from "react-icons/fa"
 import { Link } from 'react-router-dom';
-const NavBar = (props) => {
+import { useSelector} from 'react-redux'
 
+const NavBar = () => {
 
+const count=useSelector((state)=>state.cart.cartCount)
+console.log(count);
   return (
     <nav className="navbar navbar-expand-lg bg-light">
     <div className="container-fluid">
@@ -25,7 +28,7 @@ const NavBar = (props) => {
           </li>
           <li className="nav-item">
 <Link to="/cart" className='nav-link'>
-cart {props.count}
+<FaShoppingCart/> {count}
 
 </Link>
             
