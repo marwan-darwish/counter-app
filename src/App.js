@@ -7,6 +7,7 @@ import Products from './components/Products';
 import SingleProduct from './components/SingleProduct';
 import { useState } from 'react';
 import Cart from './components/Cart';
+import Register from './components/Register';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
   <Route path='/products' element={<Products/>}/>
   <Route path='/products/:id' element={<SingleProduct/>} />
 <Route path='/cart' element={<Cart/>}/>
+<Route path='/register' element={<Register/>}/>
 </Routes>
 </Router>
     );
